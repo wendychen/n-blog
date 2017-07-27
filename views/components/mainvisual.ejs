@@ -1,0 +1,37 @@
+<div class="nav-setting">
+  <div class="ui buttons">
+    <div class="ui floating dropdown button">
+      <i class="icon bars"></i>
+      <div class="menu">
+        <% if (user) { %>
+          <a class="item" href="/posts?author= <%= user.id %>">個人主頁</a>
+          <div class="divider"></div>
+          <a class="item" href="/posts/create">發表文章</a>
+          <a class="item" href="/signout">登出</a>
+        <% } else { %>
+          <a class="item" href="/signin">登入</a>
+          <a class="item" href="/signup">註冊</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="four wide column"></div>
+  <div class="eight wide column">
+
+  <% if (success) { %>
+    <div class="ui success message">
+      <p><%= success %></p>
+    </div>
+  <% } %>
+
+  <% if (error) { %>
+    <div class="ui error message">
+      <p><%= error %></p>
+    </div>
+  <% } %>
+
+  </div>
+</div>
